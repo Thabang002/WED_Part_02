@@ -1,16 +1,22 @@
-
 /*Styling the body*/
 body {
-    background-color: yellow;
+    background-color: rgba(255, 255, 0, 0.411);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+
 /*Styling the navigation bar*/
 
 nav {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 2px 3rem;
     background-color: black;
-    min-height: 20vh;
+    min-height: 10vh;
 }
 
 nav li {
@@ -62,13 +68,31 @@ a {
 /*Styling the footer*/
 footer {
     display: flex;
-    min-width: 100%;
+    min-width: 100vh;
     min-height: 25vh;
     background-color: black;
+    margin: 0;
+    
 }
+
+
 
 footer section {
     color: white;
     border-left: 2px double white;
     padding: 1rem 1.5rem 1rem 1.5rem;
+}
+
+/*Icons*/
+.fa-facebook, .fa-square-instagram
+{
+    color: rgba(172, 255, 47, 0.89);
+    margin-left: 1rem;
+    border-radius: 100%;
+}
+
+footer input{
+    min-height: 2rem;
+    min-width: 100%;
+    font-size: 1rem;
 }

@@ -1,6 +1,7 @@
 14 September 2025 
-Added feature :
+Added features :
 . CSS to the navbar
 . Made base.css to style every web page
-. New images inside assets folder
+. New icons and images inside assets folder
+
 

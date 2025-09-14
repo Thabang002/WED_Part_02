@@ -7,6 +7,13 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.page-intro{
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 /*Styling the navigation bar*/
 

@@ -1,0 +1,109 @@
+.container{
+    padding: 2rem;
+}
+
+/*Styling the slides of the employees*/
+.slider-wrapper{
+    position: relative;
+    max-width: 48rem;
+    margin:0 auto;
+}
+
+.slides{
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75 hsl(0, 0%, 0%, 0.25);
+    border-radius: 0.5rem
+}
+
+.slides li img{
+flex:1 0 100%;
+scroll-snap-align: start;
+}
+.slides li{
+    list-style: none;
+}
+
+.slider-nav{
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom:1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a{
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover{
+    opacity: 1;
+}
+
+
+
+
+/*Styling the brief history*/
+.container-1{
+    display: flex;
+    width: 70%;
+    height: 30%vh;
+    margin-left: 2rem;
+    margin: 0 auto;
+}
+.container-1 div{
+    max-height: 15%;
+    
+}
+.container-1 div img{
+   height: 100%;
+    width: 40vh
+}
+.container-1  p{
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    height: 100%;
+    
+    
+    
+}
+.h2{
+    text-align: center;
+}
+
+
+/*Table element*/
+#products{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#products td a{
+    text-decoration: none;
+    color: black;
+    display: block;
+    
+}
+#products td{
+    text-align: center;
+    padding: 1rem;
+    width: 30vh;
+    height: 40vh;
+}
+
+#products td img{
+    width: 100%;
+    height: 100%;
+    
+}

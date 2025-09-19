@@ -6,7 +6,9 @@ Added features :
 
 15 September 2025
 added features :
-. Adding styling to about.html
+. styling to about.html
 . styling slides and images in about.html
 
-
+18 September 2025
+Added features :
+. making website resposive

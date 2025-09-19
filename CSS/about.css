@@ -1,12 +1,14 @@
-.container{
+.container-2{
+    height: 20%;
     padding: 2rem;
 }
 
 /*Styling the slides of the employees*/
 .slider-wrapper{
     position: relative;
-    max-width: 48rem;
+    max-width: 25rem;
     margin:0 auto;
+    margin-top: 2rem;
 }
 
 .slides{
@@ -54,21 +56,29 @@ scroll-snap-align: start;
 
 
 /*Styling the brief history*/
+#owners{
+    width:50%;
+    height: 100%;
+}
 .container-1{
     display: flex;
-    width: 70%;
-    height: 30%vh;
-    margin-left: 2rem;
-    margin: 0 auto;
+    height: 40%;
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+    background-color: grey;
+    padding: 0;
 }
-.container-1 div{
-    max-height: 15%;
-    
-}
-.container-1 div img{
-   height: 100%;
-    width: 40vh
-}
+
+    .item-1 {
+        flex-grow: 5;
+  
+    }
+    img{
+        height: 100%;
+    }
+
+
 .container-1  p{
     font-size: 1.2rem;
     padding-left: 1rem;

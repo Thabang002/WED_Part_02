@@ -2,53 +2,80 @@
     height: 90%;
     width: 10%;
     justify-self: center;
-    background-color: rgba(128, 128, 128, 0.466);
+    background-color: grey;
     
     border-radius: 10%;
-    padding: 2px;
+    padding: 1.5rem;
 }
 
 .logo{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 15vh;
+    margin:0.5rem ;
+    height: 20%;
 }
 
 main{
     min-height: 50%;
 }
 
-.contant{
-    
-    padding: 2px;
+.container-1{
+    background-color: grey;
+    padding: 0;
     display: flex;
-    width: 70%;
     min-height: 50%;
 }
 
-.contant p,h2{
+.container-1 p{
     margin-left: 1rem;
     font-size: 1.2rem;
-    color: black;
+    color: rgba(255, 255, 255, 0.582);
 }
 
 /* Styling Slides */
 
 .slides img {
-    width: 100px;
-    height: 100px;
+    width: 1rem;
+    height: 1rem;
 }
-p{
-    margin-left: 1rem;
-}
- .products {
-    display: inline-block;
 
+ 
+.container-2  {
+     display: flex;
+     margin-top: 1rem;
+    gap: 2rem;
+    
 }
-.products button{
+.container-2  .products a{
     text-decoration: none;
+    background-color: gray;
+    border: 0.2rem solid white;
+
     color: black;
     
 }
+
+.container-2  .products a:hover{
+    border: 0.2rem solid rgb(0, 128, 21);
+    cursor: pointer;
+    
+}
+.container-2  .products a:active{
+    border: 0.5rem solid green;
+    
+    
+}
+
+.container-3{
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-left: 0;
+    max-width: 25%;
+}
+.container-3 p{
+    background-color: gray;
+}
+
+
 

@@ -1,16 +1,20 @@
 /*Styling the body*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 body {
     background-color: rgba(255, 255, 0, 0.411);
     margin: 0;
-    padding: 0;
-    height: 100%;
+    width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .page-intro{
     text-align: center;
     color: white;
-    font-size: 40px;
+    font-size: 1.5rem;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -21,13 +25,15 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2px 3rem;
+    padding: 1.5rem 3rem;
     background-color: black;
     min-height: 10vh;
+    margin-top: 0%;
+    width: 100%;
 }
 
 nav li {
-    margin: 0 20px;
+    margin: 0 1.5rem;
     color: white;
 }
 
@@ -57,14 +63,14 @@ a {
     display: block;
     color: black;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 1rem 1.5rem;
 }
 
 
 .dropdown .content {
     background-color: white;
     position: absolute;
-    min-width: 100px;
+    min-width: 10rem;
     display: none;
 }
 
@@ -74,11 +80,12 @@ a {
 
 /*Styling the footer*/
 footer {
+    width: 100%;
+
     display: flex;
-    min-width: 100vh;
-    min-height: 25vh;
+    min-height: 25%;
     background-color: black;
-    margin: 0;
+    margin-right: 0;
     
 }
 
@@ -86,8 +93,10 @@ footer {
 
 footer section {
     color: white;
-    border-left: 2px double white;
+    width: 100%;
+    border-left: 0.2rem  double gray;
     padding: 1rem 1.5rem 1rem 1.5rem;
+    margin: 0;
 }
 
 /*Icons*/

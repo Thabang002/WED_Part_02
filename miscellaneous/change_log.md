@@ -12,3 +12,9 @@ added features :
 18 September 2025
 Added features :
 . making website resposive
+
+22 September 2025
+Added features:
+. Made fonts and box models responsive
+. made navbar reseposive 
+. added hamburger menue for mobile screens

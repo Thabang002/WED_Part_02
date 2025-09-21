@@ -1,8 +1,6 @@
-.products {
-    display: grid;
-}
+
 
 .product {
     display: inline-block;
-    width: 10vh;
+    width: 10%;
 }

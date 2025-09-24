@@ -74,7 +74,7 @@ scroll-snap-align: start;
         flex-grow: 5;
   
     }
-    img{
+    .container-1 img{
         height: 100%;
     }
 
@@ -93,26 +93,53 @@ scroll-snap-align: start;
 
 
 /*Table element*/
-#products{
+.container-3{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: .2em;
+    width: 70%;
+    min-height: 25%;
+margin: 0 auto;
+    margin-bottom: .5rem;
+
 }
 
-#products td a{
-    text-decoration: none;
-    color: black;
+.container-3 img{
     display: block;
-    
-}
-#products td{
-    text-align: center;
-    padding: 1rem;
-    width: 30vh;
-    height: 40vh;
+    width: 100%;
+    padding: .2em;
+    height:auto;
+    object-fit: cover;
+    margin: 0 auto;
+     aspect-ratio: 1/1;
 }
 
-#products td img{
-    height: 100%;
-    
+
+.container-3 .item {
+   color: white;
+   background-color: rgba(128, 128, 128, 0.623);
+    width:24.5%;
+     border: none;
+    padding: 0 ;
+    text-align: center;
 }
+@media (max-width:500px){
+    .container-3 {
+        width: 70%;
+
+}
+.container-3 .item {
+   width: 100%;
+        flex: 1 0 50%;
+    flex-wrap: wrap;
+        text-align: center;
+}
+}
+
+.container-3 .item p,a {
+   display: block;
+   font-size: 1rem;
+   width: 100%;
+
+}
+

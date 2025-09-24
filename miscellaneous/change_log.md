@@ -18,3 +18,7 @@ Added features:
 . Made fonts and box models responsive
 . made navbar reseposive 
 . added hamburger menue for mobile screens
+
+23 September 2025
+Added Features:
+. making the about apge responsive

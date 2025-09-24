@@ -107,25 +107,37 @@ main{
     flex-direction: column;
     padding: 1rem;
     margin-top: 1rem;
-    max-width: 25%;
+    max-width: 100%;
+    min-width: auto;
+    width: fit-content;
 }
 .container-3 p{
+    display: flex;
+    flex-direction: column;
     color: rgba(255, 255, 255, 0.582);
     background-color: gray;
+    
+    font-size: 1.5rem;
+    padding: .2em;
 }
 
 .click-here{
-    width: 50%;
+    min-width: 50%;
+    min-height: fit-content;
     margin-top: 0.5rem;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
 .click-here a{
-    width: 50%;
+    width:  100%;
+    flex-wrap: wrap;
+    display: block;
     text-decoration: none;
     background-color: gray;
     border: 0.2rem solid white;
     color: rgba(255, 255, 255, 0.582);
-    padding: 0.1rem;
+    padding: 0.1em;
 }
 
 .container-3  .click-here a:hover{

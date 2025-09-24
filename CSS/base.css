@@ -1,4 +1,8 @@
 /*Styling the body*/
+html{
+    height: 100%;
+}
+
 *, *::before, *::after{
     box-sizing: border-box;
     margin: 0;
@@ -6,66 +10,27 @@
     text-decoration: none;
     list-style: none;
 }
+
 body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
     background-color: rgba(255, 255, 0, 0.411);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
-    max-height: fit-content;
 }
 /*basic page layout and breakpoints*/
-
+ 
 .container{
-    width: 100%;
-    margin: 0;
+    flex:1 0 100%;
+    gap: 1rem;
     padding-left: .5rem;
     padding-right: .5rem;
     min-height:25%;
     height: auto;
 }
 
-@media (max-width:1536px){
-    .container{
-        max-width: 100%;
-         margin: 0;
-    }
-}
-
-@media (max-width:1536px){
-    .container{
-        max-width: 100%;
-         margin: 0;
-    }
-}
-@media (max-width:1280px){
-    .container{
-        max-width: 100%;
-        margin: 0;
-    }
-}
-@media (max-width:1024px){
-    .container{
-        max-width: 100%;
-    }
-}
-@media (max-width:768px){
-    .container{
-        max-width: 100%;
-         margin: 0;
-    }
-}
-@media (max-width:640px){
-    .container{
-        max-width: 100%;
-         margin: 0;
-    }
-}
-@media (max-width:475px){
-    .container{
-        max-width: 100%;
-         margin: 0;
-    }
-}
 
 .page-intro{
     text-align: center;
@@ -77,24 +42,22 @@ body {
 
 /*Styling the footer*/
 footer {
-    max-width: 100%;
+    margin-top: auto;
     min-height: 25%;
-    height: auto;
     display: flex;
-    min-height: 25%;
     background-color: black;
     font-size: .8rem;
     
-    
 }
 
-@media (max-width: 500px){
+@media (max-width: 550px){
      footer section
     {
         border: 0.2rem  solid gray;
         flex: 1 0 50%;
         width: 50%;
         text-align: center;
+        margin: 0;
    
     }
     footer{
@@ -122,8 +85,8 @@ footer {
 
 footer section {
     color: white;
-    width:25%;
-    border-left: 0.2rem  double gray;
+    flex: 1;
+    border-left: 0.2rem  solid gray;
     padding: .5em ;
     margin-bottom: 0;
     text-align: center;

@@ -164,7 +164,7 @@ nav .container-0 a:hover{
   background-color: var(--foreground);
   color: var(--background);
   max-width: 10rem;
-  min-height: 100vh;
+    height: fit-content;
 }
 .sidebar li {
     width: fit-content;
@@ -247,10 +247,15 @@ nav .container-0 a:hover{
         margin-bottom: 2rem;
     }
     /*animated header background*/
+    /*Image by 
+    <a href="https://pixabay.com/users/openclipart-vectors-30363/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=146367">
+    OpenClipart-Vectors</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=146367">
+    Pixabay</a>*/
     header{
         background-image: url(../assets/images/cake-03.jpg);
-        background-size: 10%;
+        background-size: 20%;
         animation: bg-animation 20s infinite alternate;
+        height: 25%;
     }
 
     
@@ -259,10 +264,10 @@ nav .container-0 a:hover{
 /*animation*/
 @keyframes bg-animation{
     0%{
-        background-position: left;
+        background-position: top;
     }
     100%{
-        background-position: right;
+        background-position: bottom;
     }
 }
 

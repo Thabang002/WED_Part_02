@@ -45,4 +45,4 @@ All icons are from Fontawsome , the images are from "Bakery Co.com" or unsplash.
     Web Dev Simplified (2023). How To Build An Animated Hamburger Menu With Only CSS. YouTube. Available at: https://www.youtube.com/watch?v=dAIVbLrAb_U.
 
 
-Author : Thabang Makola  ST10473515
+## Author : Thabang Makola  ST10473515

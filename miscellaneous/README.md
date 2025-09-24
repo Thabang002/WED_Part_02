@@ -28,7 +28,11 @@ Note: The pages present in this project are the ones chosen for modificatios onl
         1.On the navbar press  or hover over  "The Drinks Co+" to acces the drop down menu only select Beer.
         2. Select "Beer" you will be directed to **beer.html** .
 
-**#**: Navigating throu the rest of the page is fairly simple but remember to only use the functional links.
+NOTE: Navigatinng throug the rest of the page is fairly simple but remember to only use the functional links.
+
+                                        ### Images and Icons
+All icons are from Fontawsome , the images are from "Bakery Co.com" or unsplash.com(navbar backround image).
+
 
 # Referance list:
     

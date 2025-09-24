@@ -3,7 +3,7 @@
 header{
     display: grid;
     grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(1, auto);
 }
 
 
@@ -77,12 +77,12 @@ nav .container-0 a:hover{
 
 
 :root {
-  --bar-width: 60px;
-  --bar-height: 8px;
-  --hamburger-gap: 6px;
+  --bar-width: 5rem;
+  --bar-height: .5rem;
+  --hamburger-gap: .5rem;
   --foreground: #333;
   --background: white;
-  --hamburger-margin: 8px;
+  --hamburger-margin: .5rem;
   --animation-timing: 200ms ease-in-out;
   --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
@@ -109,8 +109,8 @@ nav .container-0 a:hover{
 .hamburger-menu:has(input:focus-visible)::before,
 .hamburger-menu:has(input:focus-visible)::after,
 .hamburger-menu input:focus-visible {
-  border: 1px solid var(--background);
-  box-shadow: 0 0 0 1px var(--foreground);
+  border: .2rem solid var(--background);
+  box-shadow: 0 0 0 .2rem var(--foreground);
 }
 
 .hamburger-menu::before,
@@ -158,7 +158,7 @@ nav .container-0 a:hover{
     flex-direction: column;
     background-color: black;
   transition: translate var(--animation-timing);
-  translate: -100%;
+  translate: -110%;
   padding: 0.5rem 1rem;
   padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
   background-color: var(--foreground);
@@ -255,7 +255,6 @@ nav .container-0 a:hover{
         background-image: url(../assets/images/cake-03.jpg);
         background-size: 20%;
         animation: bg-animation 20s infinite alternate;
-        height: 25%;
     }
 
     
@@ -276,15 +275,17 @@ nav .container-0 a:hover{
     display: block;
 }
 
-.sidebar .dropdown:hover .content-2 {
-    display: grid;
-    grid-template-columns: repeat(3, fit-content);
-    grid-template-rows: repeat(5,fit-content);
-    background-color: rgba(255, 255, 255, 0.397);
-    left: 5rem;
 
-}
 
 .hamburger-menu:has(input:checked) + .sidebar {
   translate: 0;
+}
+
+.sidebar .dropdown:hover .content-2 {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(5,auto);
+    background-color: white;
+    left: 5rem;
+
 }

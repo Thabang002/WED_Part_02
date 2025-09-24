@@ -27,29 +27,44 @@ main{
     max-width: 70%;
     width: fit-content;
     height: 60%;
-    background-color: gray;
+    background-color: rgba(128, 128, 128, 0.719);
     
 }
 
 .item-3 form{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(4,1fr);
-    width: 100%;
-}
-
-@media (max-width: 500px)
-{
-     .item-3 form{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: .2em;
     width: 100%;
-}
+    gap: .2em;
 }
 
-footer{
-    margin-top: auto;
-    flex: auto;
+.item-3 form div{
+   flex: 0 0 25%;
+    width: 100%;
+    height: max-content;
+    text-align: center;
+    padding: 0;
+    border: 0;
 }
+.item-3 form input{
+    width: 100%;
+    height: auto;
+    border: .2rem solid black;
+}
+
+.item-3 form #item-6{
+    height: 10rem;
+    flex: 1 0 75%;
+}
+#item-6 textarea{
+    min-height: 100%;
+    width: 100%;
+}
+
+
+
 
 

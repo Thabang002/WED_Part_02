@@ -28,6 +28,9 @@ Added features :
 . resoponsiveness to all pages
 . a dedicated style sheet to every page eccept Caramel Drip Cake (2 tiere).
 
+## 26 September 2025
+Added features :
+. removed spacialized stylesheets for each html page so they all use one
 
  
         

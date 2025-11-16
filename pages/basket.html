@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/base.css">
-    </head>
     <title>Basket</title>
-<header class="container">
-<section class="burger">
-    <label class="hamburger-menu">
-        <input type="checkbox">
-    </label>
+    </head>
     
-        <ul class="sidebar">
-                    <li  class="page , item-1"><a href="../index.html">Home</a></li>
+    
+<body>
+
+                <header class="container">
+
+     <ul class="nav-links ">
+                    <li  class="page , item-1"><a href="/index.html">Home</a></li>
                     <li  class="page , item-2"><a href="about.html">About Us</a></li>
                     <li class="dropdown , page ,item-3">
                         Our Bakery+
@@ -42,7 +42,6 @@
                             <li><a href="#">Vodka</a></li>
                             <li><a href="#">Wine +</a></li>
                             <li><a href="#">Whisky</a></li>
-
                         </ul>
                     </li>
                     <li class="page , item-4"><a href="franchise.html">Franchise</a></li>
@@ -50,15 +49,20 @@
                     <li class="page, item-6"><a href="register.html">Login / Register</a></li>
                     <li class="page , item-7  "><a href="basket.html">Basket<i class="fa-solid fa-cart-shopping"
                                 style="color: #7d7d7d;"></i></a></li>
-
                 </ul>
-</section>
+
+                <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
         <nav class="nav-bar">
 
             <section>
 
                 <ul class="container-0">
-                    <li  class="page , item-1"><a href="../index.html">Home</a></li>
+                    <li  class="page , item-1"><a href="/index.html">Home</a></li>
                     <li  class="page , item-2"><a href="about.html">About Us</a></li>
                     <li class="dropdown , page ,item-3">
                         Our Bakery+
@@ -70,7 +74,7 @@
                     </li>
                     <li class="dropdown , page ,item-4">
                         The Drinks Co+
-                        <ul class="content ">
+                        <ul class="content-2 ">
                             <li><a href="beer.html">Beer</a></li>
                             <li><a href="#">Braai Time Classic</a></li>
                             <li><a href="#">Brandy</a></li>
@@ -99,7 +103,9 @@
 
             </section>
         </nav>
-        
+        <section class="logo">
+            <img width="150" height="120" id="logo" src="/assets/images/BakeryCo.-logo-1-white-lettering.png" alt="Logo">
+        </section>
     </header>
 
     <main id="basket" class="container">
@@ -147,23 +153,11 @@
 
             <section>
                 <p>
-                    RETAIL TRADING HOURS:
-                    Factory
-                    FAQ
-                    Delivery
-                    Contact Us
-                    Ts & Cs
-                    MON – FRI: 7AM – 4:30PM
-                    SAT: 7AM – 12PM
-                    SUN – PUBLIC HOLIDAYS: Closed
-
-                    MON – FRI: 9AM – 7PM
-                    SAT – SUN – PUBLIC HOLIDAYS: 9AM – 5PM
-
-                    Bakery Co. Coffee Lounge
-                    MON – SAT: 8AM – 4:30PM
-                    SUN: 9AM – 1PM
-                    PUBLIC HOLIDAYS: 9AM – 4:30PM
+                    <br>
+                    © <i><span id="year"></span></i> BakeryCo. All Rights Reserved.<br><br>
+                     <!---date stamp area--> <i><span id="datestamp"></span></i>
+                     <br><br>
+                     <!---time stamp area--> <i><span id="timestamp"></span></i>
                 </p>
             </section>
             <section>
@@ -172,7 +166,7 @@
                     <table>
                         <tr>
                             <td width="100"></td>
-                            <td><input type="email" name="email" placeholder="Email"></td>
+                            <td><input required type="email" name="email" placeholder="Email"></td>
                         </tr>
                         <tr>
                             <td width="100"></td>
@@ -180,13 +174,14 @@
                         </tr>
                     </table>
                 </form>
-                <i  class="fa-brands fa-facebook fa-2x"></i>
+                 <i  class="fa-brands fa-facebook fa-2x"></i>
                  <i  class="fa-brands fa-square-instagram fa-2x"></i>
             </section>
             <section>
-                <img width="150" height="120" src="../assets/images/BakeryCo.-logo-1-white-lettering.png" alt="Logo">
+                <img class="footer-logo" width="150" height="120" src="/assets/images/BakeryCo.-logo-1-white-lettering.png" alt="Logo">
             </section>
     </footer>
+    <script src="/script.js"></script>
 <script src="https://kit.fontawesome.com/98cf2a475d.js" crossorigin="anonymous"></script>
 </body>
 

@@ -110,56 +110,26 @@
             <section><img width="150" height="120" src="../assets/images/BakeryCo.-logo-1-white-lettering.png"
                     alt="Logo">
             </section>
-            <section>
-                <h2>Registration Form</h2>
-                <form action="" method="post">
-                    <table>
-                        <tr>
-                            <td width="100px"></td>
-                            <td><input type="text" name="username" placeholder="Enter your user name" required></td>
-                        </tr>
-                        <tr>
-                            <td width="100px"></td>
-                            <td><input type="text" name="name" placeholder="Enter your name" required></td>
-                        </tr>
-                        <tr>
-                            <td width="100px">
-                            <td><input type="text" name="surename" placeholder="Enter your surname" required></td>
+            
+           <div class="login-container">
+        <form id="loginForm">
+            <h2>Login</h2>
 
-                            </td>
-                        </tr>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter username">
+                <small class="error"></small>
+            </div>
 
-                        <tr>
-                            <td width="100px"></td>
-                            <td><input type="email" name="email" placeholder="Enter your email" requiured></td>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password">
+                <small class="error"></small>
+            </div>
 
-                        </tr>
-                        <tr>
-                            <td width="100px"></td>
-                            <td><input type="number" name="number" placeholder="Enter cell number" required></td>
-                        </tr>
-                    </table>
-                </form>
-            </section>
-            <section>
-                <h2>Login Form</h2>
-                <form action="" method="post">
-                    <table>
-                        <tr>
-                            <td width="100px"></td>
-                            <td><input type="text" name="username" placeholder="Enter your user name" required></td>
-                        </tr>
-
-                        <tr>
-                            <td width="100px"></td>
-                            <td><input type="text" name="password" placeholder="Enter your password" required></td>
-                        </tr>
-                    </table>
-                    <p class="login-remember"><input name="rememberme" type="checkbox" id="rememberme"
-                            value="forever"><label for="rememberme">Remember Me</label></p>
-
-                </form>
-            </section>
+            <button type="submit">Login</button>
+        </form>
+    </div>
         </main>
         <footer class="container">
 

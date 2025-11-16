@@ -32,5 +32,9 @@ Added features :
 Added features :
 . removed spacialized stylesheets for each html page so they all use one
 
+## 16 November 2025
+Added features :
+. Modified login Form and made it resposive
+
  
         

@@ -34,7 +34,7 @@ Added features :
 
 ## 16 November 2025
 Added features :
-. Modified login Form and made it resposive
+. Modified login form and register form.
 
  
         

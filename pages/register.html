@@ -101,15 +101,14 @@
 
             </section>
         </nav>
-        <section class="logo">
-            <img width="150" height="120" id="logo" src="/assets/images/BakeryCo.-logo-1-white-lettering.png" alt="Logo">
-        </section>
     </header>
-    
-        <main id="register" class="container">
-            <section><img width="150" height="120" src="../assets/images/BakeryCo.-logo-1-white-lettering.png"
+     <section>
+        <img width="150" height="120" src="../assets/images/BakeryCo.-logo-1-white-lettering.png"
                     alt="Logo">
             </section>
+    
+        <main  class="container login-register-container">
+           
             
            <div class="login-container">
         <form id="loginForm">
@@ -128,6 +127,38 @@
             </div>
 
             <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div class="register-container ">
+        <form id="registerForm">
+            <h2>Register</h2>
+
+            <div class="input-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter full name">
+                <small class="error"></small>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="text" id="email" placeholder="Enter email">
+                <small class="error"></small>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password">
+                <small class="error"></small>
+            </div>
+
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm password">
+                <small class="error"></small>
+            </div>
+
+            <button type="submit">Register</button>
         </form>
     </div>
         </main>

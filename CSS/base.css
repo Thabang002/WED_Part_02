@@ -822,7 +822,8 @@ form button:hover {
 
 /*main content*/
  main{
-    min-height: 50%;
+    max-height: 50%;
+    height: auto;
     display: grid;
     grid-template-rows:1fr 1fr 1fr;
 }
@@ -831,7 +832,7 @@ form button:hover {
     background-color: grey;
     padding: 0;
     display: flex;
-    min-height: 50%;
+    height: auto;
 }
 
  .container-1 p{

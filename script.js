@@ -1,152 +1,53 @@
-const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
+// =========================
+// HAMBURGER MENU
+// =========================
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
 
-            hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active'); // animate hamburger
-            });
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    hamburger.classList.toggle("active");
+});
 
-            //DATE STAMP
-               function displayDate() {
-                const today = new Date();
-                document.getElementById("year").textContent = today.getFullYear();
 
-                const dateStr = today.toDateString(); // e.g., 'Fri Oct 11 2025'
-                document.getElementById("datestamp").innerHTML = `Today's Date: ${dateStr}`;
-            }
-            
-                displayDate();
-                setInterval(displayDate, 86400000); // Update every 24 hours
+// =========================
+// DATE STAMP
+// =========================
+function displayDate() {
+    const today = new Date();
+    document.getElementById("year").textContent = today.getFullYear();
 
-                // Time Stamp
-                function updateClock() {
+    const dateStr = today.toDateString(); 
+    document.getElementById("datestamp").innerHTML = `Today's Date: ${dateStr}`;
+}
+
+displayDate();
+setInterval(displayDate, 86400000); // Update every 24 hours
+
+
+// =========================
+// TIME STAMP
+// =========================
+function updateClock() {
     const now = new Date();
-    const hours = now.getHours().toString().padStart(2, '0');
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    const  seconds = now.getSeconds().toString().padStart(2, '0');
-    const ampm = hours >= 12 ? 'PM' : 'AM';
-     
-    document.getElementById("timestamp").innerHTML = `Current Time: ${hours}:${minutes}:${seconds} ${ampm}`;
-                }
-                updateClock();          
-                setInterval(updateClock, 1000); // Update every second
+    let hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, "0");
+    const seconds = now.getSeconds().toString().padStart(2, "0");
+    const ampm = hours >= 12 ? "PM" : "AM";
 
+    hours = hours % 12 || 12;
 
-// Form Validation
-
-
-// Login Form Validation
-const form = document.getElementById("loginForm");
-const username = document.getElementById("username");
-const password = document.getElementById("password");
-
-form.addEventListener("submit", (e) => {
-    e.preventDefault(); // Prevent page reload
-
-    let valid = true;
-
-    // Reset errors
-    clearError(username);
-    clearError(password);
-
-    // Username validation
-    if (username.value.trim() === "") {
-        showError(username, "Username cannot be empty");
-        valid = false;
-    }
-
-    // Password validation
-    if (password.value.trim() === "") {
-        showError(password, "Password cannot be empty");
-        valid = false;
-    } else if (password.value.length < 6) {
-        showError(password, "Password must be at least 6 characters");
-        valid = false;
-    }
-
-    // If valid, simulate login
-    if (valid) {
-        alert("Login successful!");
-        form.reset();
-    }
-});
-
-// Helper functions
-function showError(input, message) {
-    const small = input.parentElement.querySelector("small");
-    small.textContent = message;
-    small.style.display = "block";
-    input.classList.add("error-input");
+    document.getElementById("timestamp").innerHTML = 
+        `Current Time: ${hours}:${minutes}:${seconds} ${ampm}`;
 }
 
-function clearError(input) {
-    const small = input.parentElement.querySelector("small");
-    small.textContent = "";
-    small.style.display = "none";
-    input.classList.remove("error-input");
-}
+updateClock();
+setInterval(updateClock, 1000);
 
-// Register Form Validation form
 
-const registerForm = document.getElementById("registerForm");
-
-const nameInput = document.getElementById("name");
-const emailInput = document.getElementById("email");
-const passwordInput = document.getElementById("password");
-const confirmPasswordInput = document.getElementById("confirmPassword");
-
-registerForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    let valid = true;
-
-    // Reset all errors
-    clearError(nameInput);
-    clearError(emailInput);
-    clearError(passwordInput);
-    clearError(confirmPasswordInput);
-
-    // Validate name
-    if (nameInput.value.trim() === "") {
-        showError(nameInput, "Name cannot be empty");
-        valid = false;
-    }
-
-    // Validate email
-    if (emailInput.value.trim() === "") {
-        showError(emailInput, "Email cannot be empty");
-        valid = false;
-    } else if (!isValidEmail(emailInput.value)) {
-        showError(emailInput, "Enter a valid email");
-        valid = false;
-    }
-
-    // Validate password
-    if (passwordInput.value.trim() === "") {
-        showError(passwordInput, "Password cannot be empty");
-        valid = false;
-    } else if (passwordInput.value.length < 6) {
-        showError(passwordInput, "Password must be at least 6 characters");
-        valid = false;
-    }
-
-    // Validate confirm password
-    if (confirmPasswordInput.value.trim() === "") {
-        showError(confirmPasswordInput, "Please confirm your password");
-        valid = false;
-    } else if (confirmPasswordInput.value !== passwordInput.value) {
-        showError(confirmPasswordInput, "Passwords do not match");
-        valid = false;
-    }
-
-    // If valid, simulate registration
-    if (valid) {
-        alert("Registration successful!");
-        form.reset();
-    }
-});
-
-// Helper functions
+// =========================
+// UNIVERSAL VALIDATION HELPERS
+// =========================
 function showError(input, message) {
     const small = input.parentElement.querySelector("small");
     small.textContent = message;
@@ -162,10 +63,115 @@ function clearError(input) {
 }
 
 function isValidEmail(email) {
-    // Basic email regex
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
 
-// Remember to make Email subscription form validation
+// =========================
+// LOGIN FORM VALIDATION
+// =========================
+const loginForm = document.getElementById("loginForm");
+if (loginForm) {
+    const loginUser = document.getElementById("username");
+    const loginPass = document.getElementById("password");
 
+    loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let valid = true;
+        clearError(loginUser);
+        clearError(loginPass);
+
+        if (loginUser.value.trim() === "") {
+            showError(loginUser, "Username cannot be empty");
+            valid = false;
+        }
+
+        if (loginPass.value.trim() === "") {
+            showError(loginPass, "Password cannot be empty");
+            valid = false;
+        } else if (loginPass.value.length < 6) {
+            showError(loginPass, "Password must be at least 6 characters");
+            valid = false;
+        }
+
+        if (valid) {
+            alert("Login successful!");
+            location.reload(); // PAGE REFRESH
+        }
+    });
+}
+
+
+// =========================
+// REGISTRATION FORM VALIDATION
+// =========================
+const registerForm = document.getElementById("registerForm");
+
+if (registerForm) {
+    const regName = document.getElementById("name");
+    const regEmail = document.getElementById("email");
+    const regPass = document.getElementById("regPassword");
+    const regConfirm = document.getElementById("confirmPassword");
+
+    registerForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let valid = true;
+        clearError(regName);
+        clearError(regEmail);
+        clearError(regPass);
+        clearError(regConfirm);
+
+        // Name
+        if (regName.value.trim() === "") {
+            showError(regName, "Name cannot be empty");
+            valid = false;
+        }
+
+        // Email
+        if (!isValidEmail(regEmail.value)) {
+            showError(regEmail, "Enter a valid email");
+            valid = false;
+        }
+
+        // Password
+        if (regPass.value.length < 6) {
+            showError(regPass, "Password must be at least 6 characters");
+            valid = false;
+        }
+
+        // Confirm password
+        if (regConfirm.value !== regPass.value) {
+            showError(regConfirm, "Passwords do not match");
+            valid = false;
+        }
+
+        if (valid) {
+            alert("Registration successful!");
+            location.reload(); // PAGE REFRESH
+        }
+    });
+}
+
+
+// =========================
+// EMAIL SUBSCRIPTION FORM
+// =========================
+const subscribeForm = document.getElementById("subscribeForm");
+const subscribeEmail = document.getElementById("subscribeEmail");
+
+if (subscribeForm) {
+    subscribeForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        clearError(subscribeEmail);
+
+        if (!isValidEmail(subscribeEmail.value)) {
+            showError(subscribeEmail, "Enter a valid email");
+        } else {
+            alert("Subscription successful!");
+            location.reload(); // PAGE REFRESH
+        }
+    });
+}

@@ -344,8 +344,39 @@
                 <img class="footer-logo" width="150" height="120" src="/assets/images/BakeryCo.-logo-1-white-lettering.png" alt="Logo">
             </section>
     </footer>
+    <!-- IMAGE LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
 
-           
+           <script>
+            // IMAGE LIGHTBOX SCRIPT
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".lightbox .close");
+
+// When clicking any product image → open lightbox
+document.querySelectorAll(".cakes img, .beers img").forEach(img => {
+    img.addEventListener("click", function () {
+        lightbox.style.display = "block";
+        lightboxImg.src = this.src;
+    });
+});
+
+// Close when clicking X
+closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+});
+
+// Close when clicking outside image
+lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = "none";
+    }
+});
+
+           </script>
     <script src="/script.js"></script>
 <script src="https://kit.fontawesome.com/98cf2a475d.js" crossorigin="anonymous"></script>
 </body>

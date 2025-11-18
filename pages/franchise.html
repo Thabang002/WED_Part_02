@@ -129,32 +129,33 @@
                 
                 Please don’t hesitate to contact us for any franchise related inquiry  –  We are always happy to help.</p>
         </section>
-        <section class="item , item-3">
-            <form action="#" method="post">
-                
-                <div id="item-1">
-                <input for="first-name" id="first-name" type="text" placeholder="first name " required>
-                </div>
-                <div id="item-2">
-                <input for="last-name" id="last-name" type="text" placeholder="last name" required>
-                </div>
-                <div id="item-3">
-                <input for="email" id="email" type="email" placeholder="email" required>
-                </div>
-                <div id="item-4">
-                <input for="phone" id="phone" type="tel" placeholder="phone number" required>
-                </div>
-                <div id="item-5">
-                <input for="area" id="area" type="text" placeholder="Area to open" required>
-                </div>
-                <div id="item-6">
-                    <textarea name="message" id="messagr" placeholder="message us" ></textarea>
-                </div>
-                <div id="item-7">
-                    <input type="submit">
-                </div>
-            </form>
-        </section>
+      
+        <section class="enquiry-wrapper">
+    <h2>Enquiry Form</h2>
+
+    <form id="enquiryForm" class="enquiry-form">
+
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name">
+        <small class="error"></small>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email">
+        <small class="error"></small>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone">
+        <small class="error"></small>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+        <small class="error"></small>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="successMessage" class="success-message"></div>
+</section>
     </main>
      <footer class="container">
 
@@ -212,7 +213,79 @@
                 <img class="footer-logo" width="150" height="120" src="/assets/images/BakeryCo.-logo-1-white-lettering.png" alt="Logo">
             </section>
     </footer>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
 
+    const form = document.getElementById("enquiryForm");
+    const successMessage = document.getElementById("successMessage");
+
+    const fields = {
+        name: document.getElementById("name"),
+        email: document.getElementById("email"),
+        phone: document.getElementById("phone"),
+        message: document.getElementById("message")
+    };
+
+    const showError = (field, message) => {
+        const errorBox = field.nextElementSibling;
+        errorBox.textContent = message;
+        field.style.borderColor = "red";
+    };
+
+    const clearError = (field) => {
+        const errorBox = field.nextElementSibling;
+        errorBox.textContent = "";
+        field.style.borderColor = "#ccc";
+    };
+
+    const validateEmail = (email) => {
+        return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
+    };
+
+    const validatePhone = (phone) => {
+        return /^[0-9+()\-\s]{7,}$/.test(phone);
+    };
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let valid = true;
+
+        // Validate Name
+        if (fields.name.value.trim().length < 2) {
+            showError(fields.name, "Name must be at least 2 characters.");
+            valid = false;
+        } else clearError(fields.name);
+
+        // Validate Email
+        if (!validateEmail(fields.email.value.trim())) {
+            showError(fields.email, "Enter a valid email address.");
+            valid = false;
+        } else clearError(fields.email);
+
+        // Validate Phone
+        if (!validatePhone(fields.phone.value.trim())) {
+            showError(fields.phone, "Enter a valid phone number.");
+            valid = false;
+        } else clearError(fields.phone);
+
+        // Validate Message
+        if (fields.message.value.trim().length < 10) {
+            showError(fields.message, "Message must be at least 10 characters.");
+            valid = false;
+        } else clearError(fields.message);
+
+        if (valid) {
+            successMessage.textContent = "Your enquiry has been submitted successfully!";
+            successMessage.style.display = "block";
+            form.reset();
+
+            // reset borders
+            Object.values(fields).forEach(field => field.style.borderColor = "#ccc");
+        }
+    });
+});
+
+</script>
     <script src="/script.js"></script>
 </body>
 </html>

@@ -35,7 +35,6 @@ const hamburger = document.querySelector('.hamburger');
 // Form Validation
 
 
-
 // Login Form Validation
 const form = document.getElementById("loginForm");
 const username = document.getElementById("username");
@@ -166,3 +165,7 @@ function isValidEmail(email) {
     // Basic email regex
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
+
+
+// Remember to make Email subscription form validation
+

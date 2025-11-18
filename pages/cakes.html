@@ -358,7 +358,50 @@
                 <img class="footer-logo" width="150" height="120" src="/assets/images/BakeryCo.-logo-1-white-lettering.png" alt="Logo">
             </section>
     </footer>
+    <!-- LIGHTBOX OVERLAY -->
+<div id="lightbox" class="lightbox">
+    <span id="closeLightbox" class="close">&times;</span>
+    <img id="lightboxImg" class="lightbox-img" src="">
+</div>
 
+<script>// ------------------------
+// LIGHTBOX FUNCTIONALITY
+// ------------------------
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+const closeLightbox = document.getElementById("closeLightbox");
+
+// Select ALL product images
+const cakeImages = document.querySelectorAll(".cakes .img img");
+
+// When any cake image is clicked → open lightbox
+cakeImages.forEach(img => {
+    img.addEventListener("click", () => {
+        lightboxImg.src = img.src; // Load clicked image
+        lightbox.style.display = "flex";
+    });
+});
+
+// Close button
+closeLightbox.addEventListener("click", () => {
+    lightbox.style.display = "none";
+});
+
+// Click outside image closes lightbox
+lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = "none";
+    }
+});
+
+// ESC key closes lightbox
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        lightbox.style.display = "none";
+    }
+});
+</script>
     <script src="/script.js"></script>
 <script src="https://kit.fontawesome.com/98cf2a475d.js" crossorigin="anonymous"></script>
 </body>

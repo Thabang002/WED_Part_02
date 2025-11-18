@@ -116,30 +116,30 @@
             <p>Cell: 082 524 5910</p>
             <p>Email: info@bakeryco.co.za</p>
         </section>
-        <section>
-            <form action="" method="post">
-                <table>
-                    <tr>
-                        <td width="100"></td>
-                        <td><input type="text" name="name" placeholder="Name"></td>
-                    </tr>
-                    <tr>
-                        <td width="100"></td>
-                        <td><input type="email" name="email" placeholder="Email"></td>
-                    </tr>
-                    <tr>
-                        <td width="100"></td>
-                        <td><textarea name="message" placeholder="Message" cols="25" rows="5"></textarea></td>
-                    </tr>
-                    
-                    <tr>
-                        <td width="100"></td>
-                        <td><button type="submit">Send</button></td>
-                    </tr>
-                </table>
-                
-            </form>
-        </section>
+
+        <section class="contact-section">
+    <h2>Contact Us</h2>
+
+    <form id="contactForm">
+
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" placeholder="Message subject">
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="4" placeholder="Write something..."></textarea>
+
+        <button type="submit">Send Message</button>
+
+        <p id="feedback" class="feedback"></p>
+    </form>
+</section>
+        
         </main>
         
 <footer class="container">
@@ -200,5 +200,71 @@
     </footer>  
     <script src="/script.js"></script>
        <script src="https://kit.fontawesome.com/98cf2a475d.js" crossorigin="anonymous"></script>
+
+       <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); 
+
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const subject = document.getElementById("subject");
+    const message = document.getElementById("message");
+    const feedback = document.getElementById("feedback");
+
+    // Reset styles
+    [name, email, subject, message].forEach(input => {
+        input.style.border = "1px solid #ccc";
+    });
+
+    // Validation
+    if (name.value.trim() === "") {
+        name.style.border = "2px solid red";
+        feedback.style.color = "red";
+        feedback.textContent = "Please enter your full name.";
+        return;
+    }
+
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!emailPattern.test(email.value)) {
+        email.style.border = "2px solid red";
+        feedback.style.color = "red";
+        feedback.textContent = "Please enter a valid email address.";
+        return;
+    }
+
+    if (subject.value.trim() === "") {
+        subject.style.border = "2px solid red";
+        feedback.style.color = "red";
+        feedback.textContent = "Please enter a subject.";
+        return;
+    }
+
+    if (message.value.trim().length < 10) {
+        message.style.border = "2px solid red";
+        feedback.style.color = "red";
+        feedback.textContent = "Message must be at least 10 characters.";
+        return;
+    }
+
+    // SUCCESS
+    feedback.style.color = "green";
+    feedback.textContent = "Message sent successfully!";
+
+    // Email recipient processing using mailto
+    const recipient = "example@yourdomain.com"; 
+    const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject.value)}&body=${encodeURIComponent(
+        `Name: ${name.value}\nEmail: ${email.value}\n\n${message.value}`
+    )}`;
+
+    window.location.href = mailtoLink;
+
+    // Clear form
+    name.value = "";
+    email.value = "";
+    subject.value = "";
+    message.value = "";
+});
+
+       </script>
 </body>
 </html>

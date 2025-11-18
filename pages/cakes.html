@@ -106,6 +106,13 @@
         <section class="logo">
             <img width="150" height="120" id="logo" src="/assets/images/BakeryCo.-logo-1-white-lettering.png" alt="Logo">
         </section>
+        <!-- SEARCH BAR -->
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search for a cake...">
+    <button id="searchBtn">Search</button>
+    <button id="resetBtn" class="reset">Reset</button>
+</div>
+
     </header>
     
     
@@ -401,7 +408,34 @@ document.addEventListener("keydown", (e) => {
         lightbox.style.display = "none";
     }
 });
+// SEARCH FUNCTIONALITY
+
+// SEARCH FEATURE
+const searchInput = document.getElementById("searchInput");
+const searchBtn = document.getElementById("searchBtn");
+const resetBtn = document.getElementById("resetBtn");
+
+searchBtn.addEventListener("click", () => {
+    let filter = searchInput.value.toLowerCase().trim();
+    let items = document.querySelectorAll(".cakes .item");
+
+    items.forEach(item => {
+        let name = item.querySelector("a").textContent.toLowerCase();
+        if (name.includes(filter)) {
+            item.classList.remove("hide");
+        } else {
+            item.classList.add("hide");
+        }
+    });
+});
+
+// RESET BUTTON REFRESHES PAGE
+resetBtn.addEventListener("click", () => {
+    location.reload(); // fully refreshes page
+});
+
 </script>
+
     <script src="/script.js"></script>
 <script src="https://kit.fontawesome.com/98cf2a475d.js" crossorigin="anonymous"></script>
 </body>

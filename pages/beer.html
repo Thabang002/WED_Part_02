@@ -105,9 +105,17 @@
         <section class="logo">
             <img width="150" height="120" id="logo" src="/assets/images/BakeryCo.-logo-1-white-lettering.png" alt="Logo">
         </section>
+<!-- SEARCH BAR -->
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search for a beer...">
+    <button id="searchBtn">Search</button>
+    <button id="resetBtn" class="reset">Reset</button>
+</div>
+
     </header>
     
-    
+   
+
     <main class="container">
 
         <section>
@@ -350,6 +358,7 @@
     <img class="lightbox-content" id="lightbox-img">
 </div>
 
+
            <script>
             // IMAGE LIGHTBOX SCRIPT
 const lightbox = document.getElementById("lightbox");
@@ -376,7 +385,33 @@ lightbox.addEventListener("click", (e) => {
     }
 });
 
+// SEARCH FUNCTIONALITY
+const searchInput = document.getElementById("searchInput");
+const searchBtn = document.getElementById("searchBtn");
+const resetBtn = document.getElementById("resetBtn");
+
+searchBtn.addEventListener("click", () => {
+    let filter = searchInput.value.toLowerCase().trim();
+    let items = document.querySelectorAll(".beers .item");
+
+    items.forEach(item => {
+        let name = item.querySelector("a").textContent.toLowerCase();
+        if (name.includes(filter)) {
+            item.classList.remove("hide");
+        } else {
+            item.classList.add("hide");
+        }
+    });
+});
+
+// RESET — FULL PAGE REFRESH
+resetBtn.addEventListener("click", () => {
+    location.reload(); // refreshes entire page
+});
+
+
            </script>
+          
     <script src="/script.js"></script>
 <script src="https://kit.fontawesome.com/98cf2a475d.js" crossorigin="anonymous"></script>
 </body>

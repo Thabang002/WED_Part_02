@@ -178,28 +178,29 @@
                 <i><span id="datestamp"></span></i><br>
                 <i><span id="timestamp"></span></i>
             </p>
-        </section>
-
-        <section>
-            <h1>EMAIL SIGN-UP</h1>
-            <form action="" method="post">
-                <table>
-                    <tr>
-                        <td width="100"></td>
-                        <td><input required type="email" name="email" placeholder="Email"></td>
-                    </tr>
-                    <tr>
-                        <td width="100"></td>
-                        <td><button type="submit">Send</button></td>
-                    </tr>
-                </table>
-            </form>
+            <br>
             <i class="fa-brands fa-facebook fa-2x"></i>
             <i class="fa-brands fa-square-instagram fa-2x"></i>
         </section>
 
+        <section class="footer-signin">
+    
+    <form id="footerSignInForm" novalidate>
+        <input type="email" id="footerEmail" placeholder="Enter your email" required>
+        <small class="error-message"></small>
+
+        <input type="password" id="footerPassword" placeholder="Enter your password" required>
+        <small class="error-message"></small>
+
+        <button type="submit">Sign In</button>
+        <p id="footerSuccess" class="success-message"></p>
+    </form>
+</section>
+
+
         <section>
             <img class="footer-logo" width="150" height="120" src="assets/images/BakeryCo.-logo-1-white-lettering.png" alt="BakeryCo Logo">
+            
         </section>
     </footer>
 

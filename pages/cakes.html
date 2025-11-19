@@ -324,62 +324,49 @@
         </section>
     </main>
     
+     <!-- Footer -->
     <footer class="container">
+        <section>
+            <p>
+                RETAIL TRADING HOURS:<br>
+                Factory: MON – FRI: 7AM – 4:30PM, SAT: 7AM – 12PM, SUN & Public Holidays: Closed<br>
+                Coffee Lounge: MON – SAT: 8AM – 4:30PM, SUN: 9AM – 1PM, Public Holidays: 9AM – 4:30PM<br>
+                FAQ | Delivery | Contact Us | Ts & Cs
+            </p>
+        </section>
 
         <section>
             <p>
-                RETAIL TRADING HOURS:
-                Factory
-                FAQ
-                Delivery
-                Contact Us
-                Ts & Cs
-                MON – FRI: 7AM – 4:30PM
-                SAT: 7AM – 12PM
-                SUN – PUBLIC HOLIDAYS: Closed
-
-                MON – FRI: 9AM – 7PM
-                SAT – SUN – PUBLIC HOLIDAYS: 9AM – 5PM
-
-                Bakery Co. Coffee Lounge
-                MON – SAT: 8AM – 4:30PM
-                SUN: 9AM – 1PM
-                PUBLIC HOLIDAYS: 9AM – 4:30PM
+                © <span id="year"></span> BakeryCo. All Rights Reserved.<br>
+                <i><span id="datestamp"></span></i><br>
+                <i><span id="timestamp"></span></i>
             </p>
+            <br>
+            <i class="fa-brands fa-facebook fa-2x"></i>
+            <i class="fa-brands fa-square-instagram fa-2x"></i>
         </section>
-        
+
+        <section class="footer-signin">
+    
+    <form id="footerSignInForm" novalidate>
+        <input type="email" id="footerEmail" placeholder="Enter your email" required>
+        <small class="error-message"></small>
+
+        <input type="password" id="footerPassword" placeholder="Enter your password" required>
+        <small class="error-message"></small>
+
+        <button type="submit">Sign In</button>
+        <p id="footerSuccess" class="success-message"></p>
+    </form>
+</section>
 
 
-            <section>
-                <p>
-                    <br>
-                    © <i><span id="year"></span></i> BakeryCo. All Rights Reserved.<br><br>
-                     <!---date stamp area--> <i><span id="datestamp"></span></i>
-                     <br><br>
-                     <!---time stamp area--> <i><span id="timestamp"></span></i>
-                </p>
-            </section>
-            <section>
-                <h1>EMAIL SIGN-UP</h1>
-                <form action="" method="post">
-                    <table>
-                        <tr>
-                            <td width="100"></td>
-                            <td><input required type="email" name="email" placeholder="Email"></td>
-                        </tr>
-                        <tr>
-                            <td width="100"></td>
-                            <td><button type="submit">Send</button></td>
-                        </tr>
-                    </table>
-                </form>
-                 <i  class="fa-brands fa-facebook fa-2x"></i>
-                 <i  class="fa-brands fa-square-instagram fa-2x"></i>
-            </section>
-            <section>
-                <img class="footer-logo" width="150" height="120" src="/assets/images/BakeryCo.-logo-1-white-lettering.png" alt="Logo">
-            </section>
+        <section>
+            <img class="footer-logo" width="150" height="120" src="/assets/images/BakeryCo.-logo-1-white-lettering.png" alt="BakeryCo Logo">
+            
+        </section>
     </footer>
+
     <!-- LIGHTBOX OVERLAY -->
 <div id="lightbox" class="lightbox">
     <span id="closeLightbox" class="close">&times;</span>

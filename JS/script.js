@@ -175,3 +175,65 @@ if (subscribeForm) {
         }
     });
 }
+
+// ===== FOOTER EMAIL SIGN-IN FORM VALIDATION =====
+const footerForm = document.getElementById("footerSignInForm");
+const footerEmail = document.getElementById("footerEmail");
+const footerPassword = document.getElementById("footerPassword");
+const footerSuccess = document.getElementById("footerSuccess");
+
+footerForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    clearFooterErrors();
+
+    let valid = true;
+
+    // EMAIL VALIDATION
+    if (footerEmail.value.trim() === "") {
+        showFooterError(footerEmail, "Email is required");
+        valid = false;
+    } else if (!validateEmail(footerEmail.value)) {
+        showFooterError(footerEmail, "Please enter a valid email");
+        valid = false;
+    }
+
+    // PASSWORD VALIDATION
+    if (footerPassword.value.trim() === "") {
+        showFooterError(footerPassword, "Password is required");
+        valid = false;
+    } else if (footerPassword.value.length < 6) {
+        showFooterError(footerPassword, "Minimum 6 characters required");
+        valid = false;
+    }
+
+    if (valid) {
+        footerSuccess.textContent = "Signed in successfully!";
+        footerSuccess.style.display = "block";
+        footerForm.reset();
+    }
+});
+
+// Helper Functions
+function showFooterError(input, msg) {
+    const small = input.nextElementSibling;
+    small.textContent = msg;
+    small.style.display = "block";
+    input.style.borderColor = "red";
+}
+
+function clearFooterErrors() {
+    document.querySelectorAll(".footer-signin .error-message").forEach(err => {
+        err.style.display = "none";
+    });
+
+    document.querySelectorAll(".footer-signin input").forEach(input => {
+        input.style.borderColor = "#ccc";
+    });
+
+    footerSuccess.style.display = "none";
+}
+
+function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
